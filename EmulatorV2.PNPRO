@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="New project" version="121">
+  <gspn name="SWN" show-fluid-cmd="false" zoom="75">
+    <nodes>
+      <color-class definition="p{1..16}" name="P" x="60.125" y="79.0"/>
+      <color-class definition="circular tr{1..12} " name="T" x="54.125" y="78.0"/>
+      <color-class definition="P*T" name="Arc" x="70.375" y="79.0"/>
+      <place label-x="2.5" label-y="3.0" name="beginCheck" x="25.0" y="53.0"/>
+      <place domain="T" label-x="2.0" label-y="2.0" marking="&lt;tr12&gt;" name="toCheck" x="12.0" y="64.0"/>
+      <place domain="Arc" label-x="1.0" label-y="-2.0" name="checkIn" x="38.0" y="53.0"/>
+      <transition label-x="-2.5" label-y="1.5" name="checkNextIn" priority="2" priority-y="-0.5" type="IMM" x="32.85" y="53.0"/>
+      <place domain="P" label-x="4.0" label-y="0.0" name="preset" x="32.0" y="60.0"/>
+      <place domain="Arc" label-x="-2.5" marking="&lt;p1,tr1&gt;+&lt;p2,tr2&gt;+&lt;p3,tr3&gt;+&lt;p16,tr1&gt;+&lt;p13,tr2&gt;+&lt;p4,tr4&gt;+&lt;p5,tr5&gt;+&lt;p6,tr6&gt;+&lt;p14,tr5&gt;+&lt;p13,tr4&gt;+&lt;p7,tr7&gt;+&lt;p8,tr8&gt;+&lt;p9,tr9&gt;+&lt;p14,tr7&gt;+&lt;p15,tr8&gt;+&lt;p10,tr10&gt;+&lt;p11,tr11&gt;+&lt;p12,tr12&gt;+&lt;p16,tr11&gt;+&lt;p15,tr10&gt;" name="IN" x="26.0" y="33.0"/>
+      <place domain="Arc" label-x="-2.0" label-y="-2.0" name="H" x="71.0" y="33.0"/>
+      <place domain="Arc" label-x="-2.5" marking="&lt;p2,tr1&gt;+&lt;p3,tr2&gt;+&lt;p1,tr3&gt;+&lt;p16,tr3&gt;+&lt;p13,tr3&gt;+&lt;p5,tr4&gt;+&lt;p6,tr5&gt;+&lt;p4,tr6&gt;+&lt;p13,tr6&gt;+&lt;p14,tr6&gt;+&lt;p8,tr7&gt;+&lt;p9,tr8&gt;+&lt;p7,tr9&gt;+&lt;p14,tr9&gt;+&lt;p15,tr9&gt;+&lt;p11,tr10&gt;+&lt;p12,tr11&gt;+&lt;p10,tr12&gt;+&lt;p16,tr12&gt;+&lt;p15,tr12&gt;" name="OUT" x="38.0" y="33.0"/>
+      <place domain="P" label-x="5.0" label-y="-1.5" marking="&lt;p1&gt;+&lt;p4&gt;+&lt;p7&gt;+&lt;p10&gt;+&lt;p13&gt;+&lt;p14&gt;+&lt;p15&gt;+&lt;p16&gt;" name="MARK" x="60.0" y="33.0"/>
+      <color-var alt-name-fn="PLAIN" domain="P" name="p" x="83.1875" y="79.0"/>
+      <color-var domain="T" name="t" x="77.375" y="78.0"/>
+      <transition label-y="-2.0" name="endCheckIn" type="IMM" x="27.85" y="41.0"/>
+      <transition label-x="-0.5" label-y="-2.5" name="countI_M" priority="2" priority-x="1.0" priority-y="0.5" type="IMM" x="51.85" y="53.0"/>
+      <place domain="Arc" label-x="1.5" label-y="2.0" name="I_M" x="51.0" y="58.0"/>
+      <transition label-x="2.5" name="notEnabIn" type="IMM" x="51.85" y="66.0"/>
+      <transition label-x="1.5" label-y="1.5" name="enabIn" rotation="3.141592653589793" type="IMM" x="48.85" y="71.0"/>
+      <place label-x="-2.5" name="res_I_M" x="59.0" y="66.0"/>
+      <transition label-x="4.0" label-y="0.0" name="reset_I_M" priority="3" rotation="4.71238898038469" type="IMM" x="59.85" y="60.0"/>
+      <transition label-x="-1.5" label-y="2.0" name="endReset_I_M" priority="3" priority-x="-1.0" priority-y="-2.0" type="IMM" x="65.85" y="66.0"/>
+      <place domain="T" label-x="-1.5" label-y="2.0" marking="&lt;tr1&gt;+&lt;tr2&gt;+&lt;tr3&gt;+&lt;tr4&gt;+&lt;tr5&gt;+&lt;tr6&gt;+&lt;tr7&gt;+&lt;tr8&gt;+&lt;tr9&gt;+&lt;tr10&gt;+&lt;tr11&gt;+&lt;tr12&gt;" name="checkList" x="12.0" y="28.0"/>
+      <place domain="T" label-x="-1.5" label-y="2.0" name="enabList" x="17.0" y="10.0"/>
+      <place label-x="2.0" label-y="2.0" name="resettingPre" x="32.0" y="66.0"/>
+      <transition label-x="0.5" label-y="2.0" name="EndResetPre" priority="4" type="IMM" x="27.85" y="66.0"/>
+      <transition name="resetPre" priority="5" priority-x="-1.5" priority-y="1.5" type="IMM" x="27.85" y="60.0"/>
+      <place label-x="-3.0" name="beginCheckH" x="67.0" y="53.0"/>
+      <place domain="Arc" label-x="1.0" label-y="-2.0" name="checkH" x="83.0" y="53.0"/>
+      <transition label-x="-3.0" label-y="1.5" name="checkNextH" priority="2" priority-y="-0.5" type="IMM" x="77.85" y="53.0"/>
+      <place domain="P" label-x="4.0" label-y="0.0" name="hset" x="77.0" y="60.0"/>
+      <transition label-x="-2.5" label-y="3.0" name="endCheckH" type="IMM" x="72.85" y="41.0"/>
+      <transition label-y="-2.5" name="countH_M" priority="2" priority-x="1.0" priority-y="0.5" type="IMM" x="96.85" y="53.0"/>
+      <place domain="Arc" label-x="2.0" label-y="2.5" name="H_M" x="96.0" y="58.0"/>
+      <transition label-y="2.0" name="enabH" type="IMM" x="93.85" y="71.0"/>
+      <transition label-x="2.5" label-y="-0.5" name="notEnabH" rotation="3.141592653589793" type="IMM" x="96.85" y="66.0"/>
+      <place label-x="-3.0" name="res_H_M" x="104.0" y="66.0"/>
+      <transition label-x="4.0" label-y="0.0" name="reset_H_M" priority="3" rotation="4.71238898038469" type="IMM" x="104.85" y="60.0"/>
+      <transition label-x="-0.5" label-y="2.0" name="endReset_H_M" priority="3" priority-x="-1.0" priority-y="-1.5" type="IMM" x="110.85" y="66.0"/>
+      <place label-x="2.0" label-y="2.0" name="resettingH" x="77.0" y="66.0"/>
+      <transition label-x="0.5" label-y="2.0" name="EndResetHset" priority="2" type="IMM" x="72.85" y="66.0"/>
+      <transition name="resetH" priority="3" priority-x="-1.5" priority-y="1.5" type="IMM" x="72.85" y="60.0"/>
+      <place label-x="-0.5" label-y="-2.5" name="beginCheckEnab" x="5.0" y="53.0"/>
+      <transition label-x="-2.0" label-y="-2.0" name="nextT" type="IMM" x="12.85" y="53.0"/>
+      <color-var domain="T" name="t1" x="83.0625" y="78.0"/>
+      <transition label-x="-3.0" label-y="-2.0" name="endCheckEnab" rotation="5.497787143782138" type="IMM" x="5.85" y="28.0"/>
+      <place label-y="2.0" name="beginFiring" x="8.0" y="18.0"/>
+      <place domain="T" label-x="-2.0" label-y="-1.5" name="firing" x="26.0" y="18.0"/>
+      <transition delay-x="-1.0" delay-y="3.0" label-x="0.5" label-y="2.0" name="PT_fire" nservers-x="0.5" type="EXP" x="17.55" y="18.0"/>
+      <transition label-x="1.5" label-y="-2.0" name="count_I_O" priority="4" type="IMM" x="38.85" y="25.0"/>
+      <place domain="Arc" label-x="1.0" label-y="-2.0" name="I_O" x="46.0" y="25.0"/>
+      <transition label-x="2.0" name="remove" priority="3" type="IMM" x="26.85" y="25.0"/>
+      <place domain="Arc" label-y="-2.0" name="M_I" x="17.0" y="25.0"/>
+      <transition label-x="2.0" name="add" priority="2" priority-x="-2.5" priority-y="0.5" type="IMM" x="26.85" y="12.0"/>
+      <place domain="Arc" name="countO" x="38.0" y="12.0"/>
+      <transition name="endFire" type="IMM" x="38.85" y="18.0"/>
+      <place domain="T" label-x="0.5" label-y="-2.0" name="update" x="46.0" y="18.0"/>
+      <transition label-x="2.5" label-y="-1.0" name="resetC_IO" priority="4" priority-x="-2.0" priority-y="1.5" type="IMM" x="53.85" y="25.0"/>
+      <transition label-x="-1.0" label-y="-2.0" name="resetC_O" priority="3" priority-x="-1.0" priority-y="2.0" type="IMM" x="53.85" y="12.0"/>
+      <transition label-y="2.0" name="reset_m_I" priority="2" priority-x="-2.0" priority-y="3.0" type="IMM" x="17.85" y="33.0"/>
+      <place domain="T" label-x="1.5" label-y="2.0" name="findConflict1" x="70.0" y="18.0"/>
+      <transition guard="t2!=t1" guard-x="2.0" guard-y="-1.0" label-x="1.5" label-y="-3.0" name="sc_I" priority="2" priority-y="-2.0" type="IMM" x="80.85" y="12.0"/>
+      <transition guard="t2!=t1" guard-x="1.5" label-x="-0.5" label-y="-2.5" name="sc_H" priority="3" priority-x="-1.0" priority-y="-1.5" type="IMM" x="80.85" y="23.0"/>
+      <transition label-x="0.5" label-y="-2.0" name="updateLists" type="IMM" x="57.85" y="18.0"/>
+      <transition label-x="-1.0" label-y="-2.0" name="endCheckSc" type="IMM" x="80.85" y="18.0"/>
+      <place domain="T" label-x="-0.5" label-y="2.0" name="findCC" x="90.0" y="18.0"/>
+      <transition guard="t2!=t1" guard-x="-3.0" guard-y="4.5" label-x="-3.0" label-y="3.5" name="cc_H" priority="3" priority-x="-1.5" priority-y="-1.5" type="IMM" x="99.85" y="23.0"/>
+      <transition label-x="1.0" name="endCheckCc" type="IMM" x="99.85" y="18.0"/>
+      <transition guard="t2!=t1" guard-x="-3.0" guard-y="-4.0" label-x="-3.0" label-y="-3.0" name="cc_O" priority="2" priority-x="-1.5" priority-y="-2.0" type="IMM" x="99.85" y="12.0"/>
+      <transition label-x="-1.0" label-y="1.5" name="start" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="2.55" y="40.0"/>
+      <place label-y="-1.5" marking="1" name="startUp" x="2.0" y="33.0"/>
+      <color-var domain="T" name="t2" x="89.9375" y="78.0"/>
+      <place domain="T" label-x="2.0" label-y="-2.0" marking="&lt;All&gt;" name="AllT" x="12.0" y="40.0"/>
+      <place name="startCheckT" x="17.0" y="53.0"/>
+      <transition label-y="-2.5" name="toCheckT" priority="2" type="IMM" x="21.85" y="53.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="notToCheck" rotation="4.71238898038469" type="IMM" x="17.85" y="47.0"/>
+    </nodes>
+    <edges>
+      <arc head="checkNextIn" kind="INPUT" tail="beginCheck"/>
+      <arc head="checkIn" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.41669921875000004" mult-x="0.4998046874999993" tail="checkNextIn"/>
+      <arc head="checkNextIn" kind="INPUT" mult="&lt;t&gt;" mult-k="0.5491210937500001" mult-x="-1.0" mult-y="-0.09999999999999432" tail="toCheck"/>
+      <arc head="toCheck" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.42353515625000004" mult-x="-0.38232421875" mult-y="1.0412109374999972" tail="checkNextIn"/>
+      <arc head="preset" kind="OUTPUT" mult="&lt;p&gt;" mult-k="0.5713867187500001" mult-x="-0.5" mult-y="0.49970703124999716" tail="checkNextIn"/>
+      <arc head="checkNextIn" kind="INHIBITOR" mult="&lt;p&gt;" mult-k="1.3489257812499997" mult-x="1.399978111330503" mult-y="0.7999562226610095" tail="preset">
+        <point x="34.5" y="57.0"/>
+      </arc>
+      <arc head="checkNextIn" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.23525390625" mult-x="-1.0" mult-y="-0.5006835937499972" tail="IN"/>
+      <arc head="IN" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.52529296875" mult-y="1.043059521255067" tail="checkNextIn">
+        <point x="33.0" y="46.0"/>
+      </arc>
+      <arc head="endCheckIn" kind="INPUT" tail="beginCheck">
+        <point x="26.0" y="42.5"/>
+      </arc>
+      <arc head="countI_M" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.8461914062500001" mult-x="-2.9296874999928946E-4" mult-y="0.5" tail="checkIn"/>
+      <arc head="checkIn" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.8461914062500001" mult-x="4.8828125E-4" mult-y="0.5" tail="countI_M"/>
+      <arc head="countI_M" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.57392578125" mult-x="0.8000000000000007" mult-y="-0.6999999999999993" tail="IN"/>
+      <arc head="countI_M" kind="INPUT" mult="&lt;p&gt;" mult-x="0.7999999999999972" mult-y="0.8000000000000007" tail="MARK"/>
+      <arc head="I_M" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.4286132812500001" mult-y="0.35693359375" tail="countI_M"/>
+      <arc head="notEnabIn" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.57685546875" mult-x="0.001074218749998579" mult-y="-0.9989257812500014" tail="checkIn"/>
+      <arc head="enabIn" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.50009765625" mult-x="-0.7999999999999972" mult-y="0.7000000000000028" tail="checkIn"/>
+      <arc head="notEnabIn" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.36708984375" mult-x="1.5252929687500014" mult-y="0.4873046875" tail="IN"/>
+      <arc head="IN" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.34775390625" mult-x="1.4161132812499986" mult-y="0.0517578125" tail="notEnabIn"/>
+      <arc head="beginCheck" kind="OUTPUT" tail="enabIn">
+        <point x="26.0" y="72.0"/>
+      </arc>
+      <arc head="res_I_M" kind="OUTPUT" mult-k="1.2926757812499998" tail="enabIn">
+        <point x="60.0" y="72.0"/>
+      </arc>
+      <arc head="res_I_M" kind="OUTPUT" tail="notEnabIn"/>
+      <arc head="reset_I_M" kind="INPUT" tail="res_I_M"/>
+      <arc head="res_I_M" kind="OUTPUT" tail="reset_I_M"/>
+      <arc head="reset_I_M" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.43759765625" mult-x="0.4992187500000007" mult-y="-0.8751953124999972" tail="I_M"/>
+      <arc head="MARK" kind="OUTPUT" mult="&lt;p&gt;" tail="reset_I_M"/>
+      <arc head="IN" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="1.0194335937499996" mult-x="0.08721167619605552" mult-y="-1.598140041635336" tail="reset_I_M">
+        <point x="60.0" y="55.5"/>
+      </arc>
+      <arc head="endReset_I_M" kind="INPUT" tail="res_I_M"/>
+      <arc head="endReset_I_M" kind="INHIBITOR" mult="&lt;All,All&gt;" mult-k="0.6418945312500002" mult-x="1.87158203125" mult-y="-0.13515625000000142" tail="I_M"/>
+      <arc head="resettingPre" kind="OUTPUT" tail="notEnabIn"/>
+      <arc head="EndResetPre" kind="INPUT" tail="resettingPre"/>
+      <arc head="resetPre" kind="INPUT" tail="resettingPre"/>
+      <arc head="resettingPre" kind="OUTPUT" tail="resetPre"/>
+      <arc head="resetPre" kind="INPUT" mult="&lt;p&gt;" mult-x="0.0" mult-y="-0.5" tail="preset"/>
+      <arc broken="true" head="resettingPre" kind="OUTPUT" mult-k="1.56455078125" tail="endCheckIn">
+        <point x="31.5" y="44.5"/>
+      </arc>
+      <arc head="beginCheckH" kind="OUTPUT" tail="endCheckIn">
+        <point x="68.0" y="42.0"/>
+      </arc>
+      <arc head="enabIn" kind="INHIBITOR" mult="&lt;p,t&gt;" mult-k="2.2790039062500003" mult-y="-0.12900319351464873" tail="IN">
+        <point x="38.5" y="59.5"/>
+        <point x="43.5" y="70.0"/>
+      </arc>
+      <arc head="checkNextH" kind="INPUT" tail="beginCheckH"/>
+      <arc head="checkH" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.41669921875000004" mult-x="0.49980468750000284" mult-y="0.5" tail="checkNextH"/>
+      <arc broken="true" head="checkNextH" kind="INPUT" mult="&lt;t&gt;" mult-k="1.64931640625" mult-x="-0.9141256609712798" mult-y="0.23345781924455622" tail="toCheck">
+        <point x="73.5" y="50.5"/>
+      </arc>
+      <arc broken="true" head="toCheck" kind="OUTPUT" mult="&lt;t&gt;" mult-k="3.229430031776429" mult-x="0.6031453541427219" mult-y="1.3677151180475704" tail="checkNextH">
+        <point x="76.5" y="50.5"/>
+        <point x="76.0" y="51.5"/>
+        <point x="35.5" y="50.5"/>
+      </arc>
+      <arc head="hset" kind="OUTPUT" mult="&lt;p&gt;" mult-k="0.5713867187500001" mult-x="-0.5" mult-y="0.49970703124999716" tail="checkNextH"/>
+      <arc head="checkNextH" kind="INHIBITOR" mult="&lt;p&gt;" mult-k="1.3489257812499997" mult-x="1.399978111330503" mult-y="0.7999562226610095" tail="hset">
+        <point x="79.5" y="57.0"/>
+      </arc>
+      <arc head="checkNextH" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.17646484375000002" mult-x="-1.0" mult-y="9.765624999857891E-5" tail="H"/>
+      <arc head="H" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.7866210937500001" mult-x="-1.0" mult-y="0.4999643109358445" tail="checkNextH">
+        <point x="78.0" y="46.5"/>
+      </arc>
+      <arc head="endCheckH" kind="INPUT" tail="beginCheckH">
+        <point x="73.0" y="45.0"/>
+      </arc>
+      <arc head="countH_M" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.6153320312500001" mult-x="1.0006835937499972" mult-y="0.5" tail="checkH"/>
+      <arc head="checkH" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.76923828125" mult-x="0.50048828125" mult-y="0.5" tail="countH_M"/>
+      <arc head="countH_M" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.57392578125" mult-x="-0.9045898437500028" mult-y="0.24326171874999858" tail="H"/>
+      <arc head="countH_M" kind="INPUT" mult="&lt;p&gt;" mult-k="0.7211914062500001" mult-x="0.7999999999999972" mult-y="0.8000000000000007" tail="MARK"/>
+      <arc head="H_M" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.4286132812500001" mult-y="0.35693359375" tail="countH_M"/>
+      <arc head="enabH" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.7711914062500002" mult-x="1.2880859375" mult-y="0.11855468749999432" tail="checkH"/>
+      <arc head="notEnabH" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.7307617187500001" mult-x="-0.4999023437499943" mult-y="1.0000976562499986" tail="checkH"/>
+      <arc head="enabH" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.40986328125000004" mult-x="1.1354751058026693" mult-y="-0.03288361960628805" tail="H">
+        <point x="83.5" y="61.5"/>
+      </arc>
+      <arc head="H" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.7375976562500001" mult-x="-1.2492769225916192" mult-y="0.25072307740838085" tail="enabH">
+        <point x="83.5" y="61.5"/>
+      </arc>
+      <arc head="beginCheckH" kind="OUTPUT" tail="enabH">
+        <point x="68.0" y="72.0"/>
+      </arc>
+      <arc head="res_H_M" kind="OUTPUT" tail="notEnabH"/>
+      <arc head="res_H_M" kind="OUTPUT" mult-k="1.3106445312499995" tail="enabH">
+        <point x="105.0" y="72.0"/>
+      </arc>
+      <arc head="reset_H_M" kind="INPUT" tail="res_H_M"/>
+      <arc head="res_H_M" kind="OUTPUT" tail="reset_H_M"/>
+      <arc head="reset_H_M" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.38232421875" mult-x="-0.05859375" mult-y="-0.7646484375" tail="H_M"/>
+      <arc broken="true" head="MARK" kind="OUTPUT" mult="&lt;p&gt;" mult-k="1.364947110414505" mult-x="1.1589824316409292" mult-y="0.1820351367181452" tail="reset_H_M">
+        <point x="74.5" y="25.5"/>
+      </arc>
+      <arc head="H" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="1.0194335937499996" mult-x="0.08721167619605552" mult-y="-1.598140041635336" tail="reset_H_M">
+        <point x="105.0" y="55.5"/>
+      </arc>
+      <arc head="endReset_H_M" kind="INPUT" tail="res_H_M"/>
+      <arc head="endReset_H_M" kind="INHIBITOR" mult="&lt;All,All&gt;" mult-k="0.6418945312500002" mult-x="1.87158203125" mult-y="-0.13515625000000142" tail="H_M"/>
+      <arc head="resettingH" kind="OUTPUT" tail="notEnabH"/>
+      <arc head="EndResetHset" kind="INPUT" tail="resettingH"/>
+      <arc head="resetH" kind="INPUT" tail="resettingH"/>
+      <arc head="resettingH" kind="OUTPUT" tail="resetH"/>
+      <arc head="resetH" kind="INPUT" mult="&lt;p&gt;" mult-x="0.0" mult-y="-0.5" tail="hset"/>
+      <arc broken="true" head="resettingH" kind="OUTPUT" mult-k="1.56455078125" tail="endCheckH">
+        <point x="76.5" y="44.5"/>
+      </arc>
+      <arc head="beginCheckEnab" kind="OUTPUT" mult-k="0.6000976562500001" tail="endCheckH">
+        <point x="114.0" y="42.0"/>
+        <point x="114.0" y="77.5"/>
+        <point x="6.0" y="77.5"/>
+      </arc>
+      <arc head="notEnabH" kind="INHIBITOR" mult="&lt;p,t&gt;" mult-k="1.3590820312499998" mult-x="0.8981445312500007" mult-y="-0.00341796875" tail="H">
+        <point x="97.0" y="64.0"/>
+      </arc>
+      <arc head="enabList" kind="OUTPUT" mult="&lt;t&gt;" mult-k="1.89599609375" mult-x="-1.0" mult-y="-0.31583563752086974" tail="endCheckH">
+        <point x="73.0" y="30.5"/>
+        <point x="73.0" y="11.0"/>
+        <point x="24.0" y="11.0"/>
+      </arc>
+      <arc broken="true" head="endCheckH" kind="INPUT" mult="&lt;t&gt;" mult-x="0.13983154296875" mult-y="1.3480224609375" tail="toCheck"/>
+      <arc broken="true" head="toCheck" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.82392578125" mult-x="1.6163465380290205" mult-y="-1.8272666207246502" tail="endCheckH">
+        <point x="68.5" y="36.5"/>
+      </arc>
+      <arc head="nextT" kind="INPUT" tail="beginCheckEnab"/>
+      <arc head="toCheck" kind="OUTPUT" mult="&lt;t++&gt;" mult-k="0.9614257812499999" mult-x="-1.6702934348450427" mult-y="0.6040058034082207" tail="nextT">
+        <point x="10.5" y="58.5"/>
+      </arc>
+      <arc head="endCheckEnab" kind="INHIBITOR" mult="&lt;All&gt;" mult-x="0.1999999999999993" tail="checkList"/>
+      <arc head="endCheckEnab" kind="INPUT" tail="beginCheckEnab"/>
+      <arc head="beginFiring" kind="OUTPUT" mult-k="1.5690429687499998" tail="endCheckEnab">
+        <point x="6.0" y="27.0"/>
+        <point x="6.0" y="19.0"/>
+      </arc>
+      <arc head="beginCheckEnab" kind="OUTPUT" mult-k="2.68916015625" tail="notEnabIn">
+        <point x="52.0" y="77.5"/>
+        <point x="42.5" y="77.5"/>
+        <point x="6.0" y="77.5"/>
+      </arc>
+      <arc head="beginCheckEnab" kind="OUTPUT" mult-k="1.4012695312499996" tail="notEnabH">
+        <point x="97.0" y="77.5"/>
+        <point x="6.0" y="77.5"/>
+      </arc>
+      <arc head="firing" kind="OUTPUT" mult="&lt;t&gt;" mult-x="-0.6000000000000014" mult-y="0.5" tail="PT_fire"/>
+      <arc head="PT_fire" kind="INPUT" tail="beginFiring"/>
+      <arc head="PT_fire" kind="INPUT" mult="&lt;t&gt;" mult-k="0.43759765625" mult-x="-1.0" mult-y="0.49921874999999716" tail="enabList"/>
+      <arc head="count_I_O" kind="INPUT" mult="&lt;t&gt;" mult-k="0.7856445312500001" mult-x="0.572265625" mult-y="-0.49951171875" tail="firing"/>
+      <arc head="firing" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.75908203125" mult-x="1.1089843749999986" mult-y="-0.18642578125000142" tail="count_I_O"/>
+      <arc head="count_I_O" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.76923828125" mult-x="-0.7308593750000014" mult-y="-0.8460937500000014" tail="IN"/>
+      <arc head="count_I_O" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.25009765625" mult-x="-1.0" mult-y="7.812500000028422E-4" tail="OUT"/>
+      <arc head="I_O" kind="OUTPUT" mult="&lt;p,t&gt;" mult-x="-0.7999999999999972" mult-y="-0.5" tail="count_I_O"/>
+      <arc head="remove" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.81259765625" mult-x="-2.0" mult-y="0.5007812499999993" tail="IN"/>
+      <arc head="M_I" kind="OUTPUT" mult="&lt;p,t&gt;" mult-x="0.8999999999999986" mult-y="-0.5" tail="remove"/>
+      <arc head="remove" kind="INPUT" mult="&lt;p&gt;" mult-k="1.4778320312500002" mult-x="0.02155848900424928" mult-y="1.5" tail="MARK">
+        <point x="62.0" y="40.0"/>
+        <point x="39.0" y="40.0"/>
+        <point x="39.0" y="29.0"/>
+      </arc>
+      <arc head="firing" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.7143554687500001" mult-x="0.5" mult-y="0.50048828125" tail="remove"/>
+      <arc head="remove" kind="INPUT" mult="&lt;t&gt;" mult-k="0.5713867187500001" mult-x="-0.5" mult-y="0.5002929687499993" tail="firing"/>
+      <arc head="add" kind="INPUT" mult="&lt;t&gt;" mult-k="0.5833007812500001" mult-x="-1.0" mult-y="1.9531249999715783E-4" tail="firing"/>
+      <arc head="firing" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.66669921875" mult-y="1.9531249999715783E-4" tail="add"/>
+      <arc head="add" kind="INPUT" mult="&lt;p,t&gt;" mult-k="3.1850585937500013" mult-x="1.2110530213269897" mult-y="-0.5" tail="OUT">
+        <point x="34.5" y="34.0"/>
+        <point x="34.5" y="17.5"/>
+        <point x="34.5" y="17.0"/>
+      </arc>
+      <arc head="MARK" kind="OUTPUT" mult="&lt;p&gt;" mult-k="2.00458984375" mult-x="0.18527826869537734" mult-y="-0.6878511889098782" tail="add">
+        <point x="27.0" y="10.0"/>
+        <point x="61.0" y="10.0"/>
+      </arc>
+      <arc head="countO" kind="OUTPUT" mult="&lt;p,t&gt;" mult-x="0.0" tail="add"/>
+      <arc head="endFire" kind="INPUT" mult="&lt;t&gt;" mult-k="0.7083007812500001" mult-x="0.8000000000000007" mult-y="0.5" tail="firing"/>
+      <arc head="update" kind="OUTPUT" mult="&lt;t&gt;" mult-x="-0.29999999999999716" mult-y="-1.0" tail="endFire"/>
+      <arc head="resetC_IO" kind="INPUT" mult="&lt;t&gt;" mult-k="0.7143554687500001" mult-x="0.7999999999999972" mult-y="-0.20000000000000284" tail="update"/>
+      <arc head="update" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.6071289062500002" mult-x="0.29999999999999716" mult-y="-0.7999999999999972" tail="resetC_IO"/>
+      <arc head="resetC_IO" kind="INPUT" mult="&lt;p,t&gt;" mult-x="-0.7999999999999972" mult-y="-0.5" tail="I_O"/>
+      <arc head="OUT" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.55498046875" mult-x="-1.0" mult-y="1.741337560723366E-4" tail="resetC_IO">
+        <point x="54.0" y="34.0"/>
+        <point x="50.6513977618214" y="34.0"/>
+      </arc>
+      <arc head="IN" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="1.2946289062499998" mult-x="1.085404165500215" mult-y="0.6322300784530626" tail="resetC_IO">
+        <point x="47.0" y="28.5"/>
+        <point x="36.575821444160695" y="31.431800218829807"/>
+      </arc>
+      <arc head="resetC_O" kind="INPUT" mult="&lt;t&gt;" mult-k="0.6530273437500002" mult-x="-0.23984374999999858" mult-y="-0.5" tail="update"/>
+      <arc head="update" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.7399414062500002" mult-x="1.1795898437500014" mult-y="0.06035156250000284" tail="resetC_O"/>
+      <arc head="resetC_O" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.47099609374999996" mult-x="1.0827330815316643" mult-y="-1.0" tail="countO">
+        <point x="51.5" y="13.0"/>
+      </arc>
+      <arc head="OUT" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="1.4217773437499996" mult-x="1.5" mult-y="0.4984045063964331" tail="resetC_O">
+        <point x="56.0" y="13.0"/>
+        <point x="56.0" y="35.5"/>
+        <point x="50.5" y="35.5"/>
+        <point x="41.5" y="35.5"/>
+      </arc>
+      <arc head="reset_m_I" kind="INPUT" mult="&lt;p,t&gt;" mult-k="0.56259765625" mult-x="2.0" mult-y="-7.812500000028422E-4" tail="M_I"/>
+      <arc head="IN" kind="OUTPUT" mult="&lt;p,t&gt;" mult-k="0.27783203125" mult-x="-4.8828125E-4" tail="reset_m_I"/>
+      <arc broken="true" head="update" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.7391601562500001" mult-x="0.49218044161573005" mult-y="0.7636842271724689" tail="reset_m_I">
+        <point x="45.0" y="22.5"/>
+      </arc>
+      <arc broken="true" head="reset_m_I" kind="INPUT" mult="&lt;t&gt;" mult-k="1.6393213391304013" mult-x="-1.548580223809509" mult-y="0.26999230416667785" tail="update">
+        <point x="13.0" y="31.0"/>
+      </arc>
+      <arc head="sc_I" kind="INPUT" mult="&lt;t1&gt;" mult-k="0.66669921875" mult-x="0.8330078125" mult-y="0.5001953124999972" tail="findConflict1"/>
+      <arc head="findConflict1" kind="OUTPUT" mult="&lt;t1&gt;" mult-k="0.6026367187500001" mult-x="-0.9736328125" mult-y="-0.6158203124999986" tail="sc_I"/>
+      <arc broken="true" head="sc_I" kind="INPUT" mult="&lt;p, t1+t2&gt;" mult-k="1.77392578125" mult-x="-3.84963645639111" mult-y="-1.5" tail="IN">
+        <point x="25.0" y="28.0"/>
+        <point x="68.0" y="13.0"/>
+      </arc>
+      <arc broken="true" head="IN" kind="OUTPUT" mult="&lt;p,t1 + t2&gt;" mult-k="1.2276367187500004" mult-x="-3.219543088226793" mult-y="-0.9634517058721457" tail="sc_I">
+        <point x="77.5" y="9.5"/>
+        <point x="24.5" y="30.5"/>
+      </arc>
+      <arc head="sc_I" kind="INPUT" mult="&lt;t2&gt;" mult-k="3.2993164062500004" mult-x="-1.0" mult-y="0.49999744868896556" tail="enabList">
+        <point x="14.0" y="11.0"/>
+        <point x="14.0" y="5.5"/>
+        <point x="81.0" y="6.0"/>
+      </arc>
+      <arc head="checkList" kind="OUTPUT" mult="&lt;t2&gt;" mult-k="1.1610351562499996" mult-y="0.9991859114188202" tail="sc_I">
+        <point x="83.0" y="13.0"/>
+        <point x="83.0" y="28.5"/>
+      </arc>
+      <arc head="sc_H" kind="INPUT" mult="&lt;t1&gt;" mult-k="0.5600585937499999" tail="findConflict1"/>
+      <arc head="findConflict1" kind="OUTPUT" mult="&lt;t1&gt;" mult-k="0.76533203125" mult-x="1.1533203125" mult-y="-0.17333984375" tail="sc_H"/>
+      <arc head="sc_H" kind="INPUT" mult="&lt;t2&gt;" mult-k="4.031933593750001" mult-y="-0.2323553527227915" tail="enabList">
+        <point x="14.0" y="11.0"/>
+        <point x="14.0" y="5.5"/>
+        <point x="85.5" y="6.0"/>
+        <point x="85.5" y="24.0"/>
+      </arc>
+      <arc head="checkList" kind="OUTPUT" mult="&lt;t2&gt;" mult-k="1.12509765625" mult-x="-1.5032050761822688" mult-y="-1.0624764332633667" tail="sc_H">
+        <point x="81.0" y="28.5"/>
+      </arc>
+      <arc broken="true" head="sc_H" kind="INPUT" mult="&lt;p,t1&gt;" mult-k="1.7532226562499997" mult-x="-4.361557075550664" mult-y="-0.6751450652999011" tail="OUT">
+        <point x="41.0" y="31.0"/>
+        <point x="74.5" y="25.0"/>
+      </arc>
+      <arc broken="true" head="OUT" kind="OUTPUT" mult="&lt;p,t1&gt;" mult-k="0.96826171875" mult-x="1.968818096101721" mult-y="0.47747544937348607" tail="sc_H">
+        <point x="75.5" y="26.5"/>
+        <point x="40.5" y="36.5"/>
+      </arc>
+      <arc head="H" kind="OUTPUT" mult="&lt;p,t2&gt;" mult-k="0.6850585937499999" mult-x="0.9002929687499943" mult-y="0.7996093750000028" tail="sc_H"/>
+      <arc head="sc_H" kind="INPUT" mult="&lt;p,t2&gt;" mult-k="0.66669921875" mult-x="-1.5002929687500028" mult-y="-0.3330078125" tail="H"/>
+      <arc head="updateLists" kind="INPUT" mult="&lt;t&gt;" mult-k="0.45458984375" mult-x="0.99951171875" mult-y="0.5" tail="update"/>
+      <arc head="findConflict1" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.45830078125000007" mult-x="0.5420898437499986" mult-y="-0.5" tail="updateLists"/>
+      <arc head="checkList" kind="OUTPUT" mult="&lt;t&gt;" mult-k="1.28662109375" mult-x="-1.0" mult-y="0.0" tail="PT_fire">
+        <point x="13.22998046875" y="22.0400390625"/>
+      </arc>
+      <arc head="endCheckSc" kind="INPUT" mult="&lt;t&gt;" mult-x="0.5" mult-y="-0.5" tail="findConflict1"/>
+      <arc head="findCC" kind="OUTPUT" mult="&lt;t&gt;" mult-k="0.6500976562500002" mult-x="0.0" mult-y="-1.0" tail="endCheckSc"/>
+      <arc head="endCheckCc" kind="INPUT" mult="&lt;t&gt;" mult-x="0.09999999999999432" mult-y="-1.0" tail="findCC"/>
+      <arc head="cc_O" kind="INPUT" mult="&lt;t1&gt;" mult-k="0.7307617187500001" mult-x="-1.0768554687499972" mult-y="-0.11542968749999716" tail="findCC"/>
+      <arc head="findCC" kind="OUTPUT" mult="&lt;t1&gt;" mult-k="0.6538085937500001" mult-x="-1.0999999999999943" mult-y="-0.10000000000000142" tail="cc_O"/>
+      <arc head="cc_H" kind="INPUT" mult="&lt;t1&gt;" mult-k="0.56611328125" tail="findCC"/>
+      <arc head="findCC" kind="OUTPUT" mult="&lt;t1&gt;" mult-k="0.78310546875" tail="cc_H"/>
+      <arc broken="true" head="cc_O" kind="INPUT" mult="&lt;p,t2&gt;" mult-k="2.8238203525543217" mult-x="-2.500088578373692" mult-y="-1.0" tail="IN">
+        <point x="28.5" y="29.5"/>
+        <point x="91.5" y="13.0"/>
+      </arc>
+      <arc broken="true" head="IN" kind="OUTPUT" mult="&lt;p,t2&gt;" mult-k="0.5999023437500001" mult-x="1.8964406892921666" mult-y="-0.8446610339382516" tail="cc_O">
+        <point x="96.0" y="10.5"/>
+        <point x="29.0" y="31.0"/>
+      </arc>
+      <arc broken="true" head="cc_O" kind="INPUT" mult="&lt;p,t1&gt;" mult-k="0.67060546875" mult-x="2.581717942678182" mult-y="-0.7347649522318136" tail="OUT">
+        <point x="103.0" y="10.5"/>
+      </arc>
+      <arc broken="true" head="OUT" kind="OUTPUT" mult="&lt;p,t1&gt;" mult-k="2.519783487915993" mult-x="3.4121592951317794" mult-y="-1.2857688727478305" tail="cc_O">
+        <point x="102.0" y="7.0"/>
+        <point x="47.5" y="27.5"/>
+      </arc>
+      <arc head="cc_H" kind="INPUT" mult="&lt;p,t2&gt;" mult-k="1.2565429687500003" tail="H">
+        <point x="100.0" y="34.0"/>
+      </arc>
+      <arc head="H" kind="OUTPUT" mult="&lt;p,t2&gt;" mult-k="1.7323242187499996" mult-x="-0.005409549382108025" tail="cc_H">
+        <point x="100.0" y="34.0"/>
+      </arc>
+      <arc broken="true" head="cc_H" kind="INPUT" mult="&lt;p,t1&gt;" mult-k="1.5290039062499998" mult-x="-0.5065577459781423" mult-y="1.867809474713365" tail="IN">
+        <point x="31.5" y="35.5"/>
+        <point x="94.5" y="27.5"/>
+      </arc>
+      <arc broken="true" head="IN" kind="OUTPUT" mult="&lt;p,t1&gt;" mult-k="2.72548828125" tail="cc_H">
+        <point x="94.0" y="24.0"/>
+        <point x="87.45121759236463" y="24.47018998631635"/>
+        <point x="31.5" y="36.0"/>
+      </arc>
+      <arc broken="true" head="cc_O" kind="INHIBITOR" mult="&lt;t2&gt;" mult-k="1.6911132812499998" mult-x="0.3724976615349078" mult-y="0.7550046769301897" tail="enabList">
+        <point x="20.0" y="11.0"/>
+        <point x="98.5" y="16.0"/>
+      </arc>
+      <arc broken="true" head="cc_H" kind="INHIBITOR" mult="&lt;t2&gt;" mult-k="1.6350585937499997" mult-x="1.418096269273505" mult-y="-0.7377789808190975" tail="enabList">
+        <point x="21.0" y="12.5"/>
+        <point x="103.0" y="20.5"/>
+      </arc>
+      <arc broken="true" head="cc_O" kind="INHIBITOR" mult="&lt;t2&gt;" mult-k="1.61142578125" mult-x="1.5140298080330155" mult-y="0.5210447120495303" tail="checkList">
+        <point x="15.5" y="30.5"/>
+        <point x="102.0" y="16.0"/>
+      </arc>
+      <arc broken="true" head="cc_H" kind="INHIBITOR" mult="&lt;t2&gt;" mult-k="1.40634765625" tail="checkList">
+        <point x="14.5" y="26.5"/>
+        <point x="103.0" y="27.5"/>
+      </arc>
+      <arc broken="true" head="checkList" kind="OUTPUT" mult="&lt;t2&gt;" mult-k="0.5324730277061462" mult-x="1.8512802577659642" mult-y="-1.0" tail="cc_H">
+        <point x="104.0" y="24.0"/>
+        <point x="104.0" y="36.5"/>
+        <point x="15.5" y="27.0"/>
+      </arc>
+      <arc broken="true" head="checkList" kind="OUTPUT" mult="&lt;t2&gt;" mult-k="0.4360196769237519" mult-x="1.7407685371623671" tail="cc_O">
+        <point x="104.0" y="13.0"/>
+        <point x="104.0" y="3.5"/>
+        <point x="11.0" y="3.5"/>
+        <point x="11.0" y="25.0"/>
+      </arc>
+      <arc broken="true" head="beginCheckEnab" kind="OUTPUT" mult-k="2.73935546875" tail="endCheckCc">
+        <point x="108.5" y="19.0"/>
+        <point x="88.49289091384388" y="25.30766000745809"/>
+        <point x="40.60376909840822" y="40.22268584782353"/>
+        <point x="3.5" y="59.0"/>
+      </arc>
+      <arc head="beginCheckEnab" kind="OUTPUT" tail="start">
+        <point x="3.0" y="51.0"/>
+      </arc>
+      <arc head="start" kind="INPUT" tail="startUp"/>
+      <arc head="nextT" kind="INPUT" mult="&lt;t&gt;" mult-k="0.5454101562500001" mult-y="-0.23564453124999574" tail="toCheck"/>
+      <arc head="nextT" kind="INPUT" mult="&lt;t++&gt;" mult-k="0.30283203125" mult-x="-1.0" tail="AllT"/>
+      <arc head="endCheckEnab" kind="INHIBITOR" mult="&lt;All&gt;" mult-x="1.5" tail="AllT"/>
+      <arc head="AllT" kind="OUTPUT" mult="&lt;All&gt;" mult-k="1.26416015625" mult-x="-0.25016070036233096" mult-y="0.7498392996376708" tail="endCheckEnab">
+        <point x="8.0" y="36.0"/>
+      </arc>
+      <arc head="startCheckT" kind="OUTPUT" tail="nextT"/>
+      <arc head="toCheckT" kind="INPUT" tail="startCheckT"/>
+      <arc head="beginCheck" kind="OUTPUT" tail="toCheckT"/>
+      <arc head="toCheckT" kind="INPUT" mult="&lt;t&gt;" tail="toCheck"/>
+      <arc head="toCheck" kind="OUTPUT" mult="&lt;t&gt;" tail="toCheckT"/>
+      <arc head="toCheckT" kind="INPUT" mult="&lt;t&gt;" mult-k="0.76181640625" tail="checkList">
+        <point x="22.0" y="46.5"/>
+      </arc>
+      <arc head="notToCheck" kind="INPUT" tail="startCheckT"/>
+      <arc head="beginCheckEnab" kind="OUTPUT" tail="notToCheck">
+        <point x="8.0" y="48.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <measures gspn-name="SWN" name="Measures">
+    <assignments/>
+    <mc4cslta/>
+    <formulas>
+      <formula language="RG"/>
+      <formula language="TRG"/>
+    </formulas>
+  </measures>
+</project>
